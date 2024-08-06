@@ -26,6 +26,8 @@ jobs:
             get kind
             system install firecracker
           working-directory: example
+        env:
+          GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Show arkade version
         run: |
           type arakade

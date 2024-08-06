@@ -55,9 +55,12 @@ Github Actions:
     plugin: arkade
     args: |
       get kind
-- name: Show kind version
+      system install firecracker
+- name: Show kind, firecracker version
   run: |
     type arkade
     type kind
+    type firecracker
+    firecracker --version
     kind version
 ```
