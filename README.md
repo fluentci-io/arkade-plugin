@@ -5,7 +5,7 @@
 
 Install tools and Kubernetes applications with [Arkade](http://github.com/alexellis/arkade).
 
-<img src="https://github.com/alexellis/arkade/raw/master/docs/arkade-logo-sm.png" alt="arkade logo" width="150" height="150">
+<img src="https://github.com/alexellis/arkade/raw/master/docs/arkade-logo-sm.png" alt="arkade logo" width="150" height="150" />
 
 ## 🚀 Usage
 
