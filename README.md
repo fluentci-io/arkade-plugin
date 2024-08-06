@@ -22,7 +22,7 @@ fluentci run --wasm arkade setup
 | setup   | Install arkade                             |
 | chart   | Chart utilites                             |
 | get     | The get command downloads a tool           |
-| install | Isntall Kubernetes app                    |
+| install | Install Kubernetes app                    |
 | oci     | oci apps                                   |
 | system  | System apps                                |
 
