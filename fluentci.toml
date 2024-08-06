@@ -1,0 +1,14 @@
+[package]
+authors = [
+  "Tsiry Sandratraina <tsiry.sndr@fluentci.io>"
+]
+description = "CI/CD Plugin for Arkade"
+license = "MIT"
+name = "arkade"
+version = "0.1.0"
+keywords = [
+  "installer",
+  "dependency management",
+  "kubernetes",
+  "docker"
+]

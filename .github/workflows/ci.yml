@@ -1,0 +1,36 @@
+name: ci
+on:
+  push:
+    branches:
+      - main
+jobs:
+  example:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup example
+        run: |
+          mkdir -p example/.fluentci
+          cp -r src example/.fluentci
+          cp Cargo.toml example/.fluentci
+          cp Cargo.lock example/.fluentci
+      - name: Setup Fluent CI CLI
+        uses: fluentci-io/setup-fluentci@v5
+        with:
+          wasm: true
+          plugin: .
+          args: |
+            get kind
+            system install firecracker
+          working-directory: example
+      - name: Show arkade version
+        run: |
+          type arakade
+          type kind
+          type firecracker
+          kind version
+          firecracker --version
+          arkade version
