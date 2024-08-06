@@ -24,15 +24,19 @@ jobs:
           plugin: .
           args: |
             get kind
-            system install firecracker
           working-directory: example
         env:
           GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install Firecracker
+        if: runner.os == 'ubuntu-latest'
+        run: |
+          fluentci run --wasm . system install firecracker
+          type firecracker
+          firecracker --version
+        working-directory: example
       - name: Show arkade version
         run: |
           type arkade
           type kind
-          type firecracker
           kind version
-          firecracker --version
           arkade version
