@@ -22,6 +22,7 @@ pub fn chart(args: String) -> FnResult<String> {
 
 #[plugin_fn]
 pub fn get(args: String) -> FnResult<String> {
+    setup_arkade()?;
     let stdout = dag()
         .pipeline("get")?
         .with_exec(vec!["arkade", "get", &args])?
@@ -31,6 +32,7 @@ pub fn get(args: String) -> FnResult<String> {
 
 #[plugin_fn]
 pub fn install(args: String) -> FnResult<String> {
+    setup_arkade()?;
     let stdout = dag()
         .pipeline("install")?
         .with_exec(vec!["arkade", "install", &args])?
@@ -40,6 +42,7 @@ pub fn install(args: String) -> FnResult<String> {
 
 #[plugin_fn]
 pub fn oci(args: String) -> FnResult<String> {
+    setup_arkade()?;
     let stdout = dag()
         .pipeline("oci")?
         .with_exec(vec!["arkade", "oci", &args])?
@@ -49,6 +52,7 @@ pub fn oci(args: String) -> FnResult<String> {
 
 #[plugin_fn]
 pub fn system(args: String) -> FnResult<String> {
+    setup_arkade()?;
     let stdout = dag()
         .pipeline("system")?
         .with_exec(vec!["arkade", "system", &args])?
